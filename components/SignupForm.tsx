@@ -10,6 +10,7 @@ import {
   Stack,
   Button,
   Circle,
+  Heading,
 } from '@chakra-ui/react';
 import { gql } from '@apollo/client';
 import { useForm } from 'react-hook-form';
@@ -71,6 +72,8 @@ export function SignupForm() {
           Create an account.
         </Text>
       </Flex>
+
+      <Heading size="4xl">I MADE A CHANGE</Heading>
 
       <Stack spacing={4}>
         <FormControl id="email">
