@@ -84,6 +84,22 @@ Input required for a user to signup
 input SignupInput {
   email: String!
   password: String!
+  profile: SignupProfileInput!
+}
+
+"""
+Input required for Profile Create on Signup.
+"""
+input SignupProfileCreateInput {
+  firstName: String!
+  lastName: String!
+}
+
+"""
+Input required for Profile on Signup.
+"""
+input SignupProfileInput {
+  create: SignupProfileCreateInput!
 }
 
 """

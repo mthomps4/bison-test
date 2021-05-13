@@ -76,9 +76,7 @@ export enum Role {
 
 /** Input required for a user to signup */
 export type SignupInput = {
-  email: Scalars['EmailAddress'];
-  firstName: Scalars['String'];
-  lastName: Scalars['String'];
+  email: Scalars['String'];
   password: Scalars['String'];
 };
 

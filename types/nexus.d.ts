@@ -95,6 +95,16 @@ export interface NexusGenInputs {
     // input type
     email: string; // String!
     password: string; // String!
+    profile: NexusGenInputs['SignupProfileInput']; // SignupProfileInput!
+  };
+  SignupProfileCreateInput: {
+    // input type
+    firstName: string; // String!
+    lastName: string; // String!
+  };
+  SignupProfileInput: {
+    // input type
+    create: NexusGenInputs['SignupProfileCreateInput']; // SignupProfileCreateInput!
   };
   StringFilter: {
     // input type
