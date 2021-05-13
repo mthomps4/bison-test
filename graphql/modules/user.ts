@@ -23,11 +23,13 @@ export const User = objectType({
     t.field('profile', {
       type: 'Profile',
       resolve: (parent, _, context) => {
-        return context.prisma.user.findUnique({
-          where: { id: parent.id }
-        }).profile()
-      }
-    })
+        return context.prisma.user
+          .findUnique({
+            where: { id: parent.id },
+          })
+          .profile();
+      },
+    });
   },
 });
 
@@ -133,12 +135,34 @@ export const Mutations = extendType({
 });
 
 // Inputs
+export const SignupProfileCreateInput = inputObjectType({
+  name: 'SignupProfileCreateInput',
+  description: 'Input required for Profile Create on Signup.',
+  definition: (t) => {
+    t.nonNull.string('firstName');
+    t.nonNull.string('lastName');
+  },
+});
+
+export const SignupProfileInput = inputObjectType({
+  name: 'SignupProfileInput',
+  description: 'Input required for Profile on Signup.',
+  definition: (t) => {
+    t.nonNull.field('create', {
+      type: SignupProfileCreateInput,
+    });
+  },
+});
+
 export const SignupInput = inputObjectType({
   name: 'SignupInput',
   description: 'Input required for a user to signup',
   definition: (t) => {
     t.nonNull.string('email');
     t.nonNull.string('password');
+    t.nonNull.field('profile', {
+      type: SignupProfileInput,
+    });
   },
 });
 
