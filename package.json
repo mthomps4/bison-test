@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "ts-node -P tsconfig.cjs.json ./scripts/buildProd",
+    "build": "yarn build:nexus && yarn build:prisma && yarn build:next && yarn db:migrate:prod",
     "build:prisma": "prisma generate",
     "build:next": "next build",
     "build:nexus": "NODE_ENV=development ts-node -P tsconfig.cjs.json --transpile-only graphql/schema.ts",
