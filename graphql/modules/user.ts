@@ -23,11 +23,13 @@ export const User = objectType({
     t.field('profile', {
       type: 'Profile',
       resolve: (parent, _, context) => {
-        return context.prisma.user.findUnique({
-          where: { id: parent.id }
-        }).profile()
-      }
-    })
+        return context.prisma.user
+          .findUnique({
+            where: { id: parent.id },
+          })
+          .profile();
+      },
+    });
   },
 });
 
@@ -137,8 +139,10 @@ export const SignupInput = inputObjectType({
   name: 'SignupInput',
   description: 'Input required for a user to signup',
   definition: (t) => {
-    t.nonNull.string('email');
+    t.nonNull.email('email');
     t.nonNull.string('password');
+    t.nonNull.string('fistName');
+    t.nonNull.string('lastName');
   },
 });
 
