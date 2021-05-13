@@ -93,8 +93,8 @@ declare global {
 export interface NexusGenInputs {
   SignupInput: {
     // input type
-    email: string; // String!
-    fistName: string; // String!
+    email: NexusGenScalars['EmailAddress']; // EmailAddress!
+    firstName: string; // String!
     lastName: string; // String!
     password: string; // String!
   };
