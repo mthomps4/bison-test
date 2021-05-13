@@ -1,4 +1,4 @@
-process1: npm install
-process2: npm build
-process3: npm db:migrate:prod
-process4: npm start
+web: npm install --production
+web: npm build
+web: npm db:migrate:prod
+web: npm start
