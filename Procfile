@@ -1,3 +1,4 @@
-process1: yarn db:migrate:prod
-process2: yarn build
-process3: yarn start
+process1: npm install
+process2: npm build
+process3: npm db:migrate:prod
+process4: npm start
