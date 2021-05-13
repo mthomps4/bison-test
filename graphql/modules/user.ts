@@ -141,7 +141,7 @@ export const SignupInput = inputObjectType({
   definition: (t) => {
     t.nonNull.email('email');
     t.nonNull.string('password');
-    t.nonNull.string('fistName');
+    t.nonNull.string('firstName');
     t.nonNull.string('lastName');
   },
 });
