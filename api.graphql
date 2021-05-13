@@ -82,9 +82,7 @@ enum Role {
 Input required for a user to signup
 """
 input SignupInput {
-  email: EmailAddress!
-  firstName: String!
-  lastName: String!
+  email: String!
   password: String!
 }
 

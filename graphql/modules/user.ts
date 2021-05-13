@@ -139,10 +139,8 @@ export const SignupInput = inputObjectType({
   name: 'SignupInput',
   description: 'Input required for a user to signup',
   definition: (t) => {
-    t.nonNull.email('email');
+    t.nonNull.string('email');
     t.nonNull.string('password');
-    t.nonNull.string('firstName');
-    t.nonNull.string('lastName');
   },
 });
 

@@ -48,8 +48,8 @@ export function SignupForm() {
   async function handleSignup(formData) {
     try {
       setIsLoading(true);
-      const { email, password, firstName, lastName } = formData;
-      const variables = { data: { email, password, firstName, lastName } };
+      const { email, password, ...profile } = formData;
+      const variables = { data: { email, password, profile: { create: profile } } };
       const { data } = await signup({ variables });
 
       await login(data.signup.token);
