@@ -1,4 +1,4 @@
-web: npm install --production
-web: npm build
-web: npm db:migrate:prod
-web: npm start
+web: yarn
+web: yarn build
+web: yarn db:migrate:prod
+web: yarn start
